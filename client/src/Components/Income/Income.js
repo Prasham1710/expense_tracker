@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from "styled-components";
 import { InnerLayout } from '../../styles/Layouts';
 import { useGLobalContext } from '../../context/globalContext';
 import Form from '../Form/Form';
 function Income() {
-    const {addIncome} = useGLobalContext()
+    const {addIncome,incomes, getIncomes} = useGLobalContext()
+
+    useEffect(() =>{
+
+    },[])
   return (
     <IncomesStyled >
       <InnerLayout>
