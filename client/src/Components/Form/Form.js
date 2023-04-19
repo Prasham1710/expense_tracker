@@ -6,7 +6,7 @@ import { useGLobalContext } from '../../context/globalContext';
 import { plus } from '../../utils/icons';
 import Button from '../Button/Button';
 function Form() {
-    const {addIncome} = useGLobalContext()
+    const {addIncome,getIncomes} = useGLobalContext()
     const [inputState, setInputState] = useState({
         title: '',
         amount: '',
@@ -22,6 +22,7 @@ function Form() {
     const handleSubmit = e => {
         e.preventDefault()
         addIncome(inputState)
+        getIncomes()
     }
     return (
     <FormStyled onSubmit={handleSubmit}>
