@@ -29,7 +29,7 @@ ChartJs.register(
 function Chart() {
     const {incomes, expenses} = useGLobalContext()
 
-    const data = {
+     const data = {
         labels: incomes.map((inc) =>{
             const {date} = inc
             return dateFormat(date)

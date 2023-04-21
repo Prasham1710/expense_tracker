@@ -8,7 +8,7 @@ import ExpenseForm from './ExpenseForm';
 function  Expenses() {
     const {addIncome,expenses, getExpenses, deleteExpense, totalExpenses} = useGLobalContext()
 
-      useEffect(() =>{
+       useEffect(() =>{
         getExpenses()
     }, [])
     return (

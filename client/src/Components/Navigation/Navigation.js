@@ -6,12 +6,12 @@ import { signout } from '../../utils/icons'
 
 function Navigation({active, setActive}) {
     
-    return (
+   return (
         <NavStyled>
             <div className="user-con">
                 <img src={avatar} alt="" />
                 <div className="text">
-                    <h2>Prasham</h2>
+                    <h2>Mike</h2>
                     <p>Your Money</p>
                 </div>
             </div>

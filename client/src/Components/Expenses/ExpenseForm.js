@@ -7,8 +7,8 @@ import { plus } from '../../utils/icons';
 import Button from '../Button/Button';
 
 function ExpenseForm() {
-    const {addExpense ,getIncomes} = useGLobalContext()
-       const [inputState, setInputState] = useState({
+    const {addExpense ,error,setError} = useGLobalContext()
+      const [inputState, setInputState] = useState({
         title: '',
         amount: '',
         date: '',
@@ -20,7 +20,9 @@ function ExpenseForm() {
 
     const handleInput = name => e => {
         setInputState({...inputState, [name]: e.target.value})
+        setError('')
     }
+
     const handleSubmit = e => {
         e.preventDefault()
         addExpense(inputState)
@@ -35,6 +37,7 @@ function ExpenseForm() {
 
     return (
         <ExpenseFormStyled onSubmit={handleSubmit}>
+            {error && <p className='error'>{error}</p>}
             <div className="input-control">
                 <input 
                     type="text" 
@@ -63,7 +66,7 @@ function ExpenseForm() {
                     }}
                 />
             </div>
-       <div className="selects input-control">
+            <div className="selects input-control">
                 <select required value={category} name="category" id="category" onChange={handleInput('category')}>
                     <option value="" disabled >Select Option</option>
                     <option value="education">Education</option>
@@ -92,6 +95,8 @@ function ExpenseForm() {
         </ExpenseFormStyled>
     )
 }
+
+
 const ExpenseFormStyled = styled.form`
     display: flex;
     flex-direction: column;
