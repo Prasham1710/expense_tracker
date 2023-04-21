@@ -7,7 +7,7 @@ import { plus } from '../../utils/icons';
 import Button from '../Button/Button';
 
 function ExpenseForm() {
-    const {addExpense} = useGLobalContext()
+    const {addExpense ,getIncomes} = useGLobalContext()
        const [inputState, setInputState] = useState({
         title: '',
         amount: '',
