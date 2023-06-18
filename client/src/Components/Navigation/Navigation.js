@@ -28,8 +28,8 @@ function Navigation({active, setActive}) {
                 })}
             </ul>
             <div className="bottom-nav">
-                <li>
-                    {signout} Sign Out
+              <li>  <button> {signout} Sign Out</button> 
+                   
                 </li>
             </div>
         </NavStyled>
